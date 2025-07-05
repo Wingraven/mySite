@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Мета-теги для корректного отображения русского языка -->
+    <meta charset="UTF-8">
+	<title>Российские государственные библиотечные информационные ресурсы</title>
+    <!-- Каскадные таблицы стилей CSS -->
+    <style>
+        /* Общие стили для всего документа */
+        body {
+		
+			font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-image: url(flo.jpg);
+			opacity: 0.85;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            min-height: 100vh;
+        }
+
+        /* Стили для фреймовой структуры */
+        .frame-container {
+            display: flex; /* Flexbox для расположения элементов */
+            height: 100vh; /* Высота на весь экран */
+        }
+
+        /* Левое навигационное окно */
+        .nav-frame {
+            width: 280px; /* Ширина навигационного фрейма */
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+            border-right: 2px solid #8B4513; /* Коричневая граница справа */
+            padding: 15px; /* Внутренние отступы */
+            overflow-y: auto; /* Вертикальная прокрутка при необходимости */
+        }
+
+        /* Основное содержимое */
+        .main-frame {
+            flex: 1; /* Занимает оставшееся пространство */
+            background-color: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
+            padding: 20px; /* Внутренние отступы */
+            overflow-y: auto; /* Вертикальная прокрутка при необходимости */
+        }
+
+        /* Стили для бегущей строки в шапке */
+        .marquee {
+            background-color: rgba(139, 69, 19, 0.8); /* Полупрозрачный коричневый фон */
+            color: white; /* Белый цвет текста */
+            padding: 10px; /* Внутренние отступы */
+            margin: -20px -20px 20px -20px; /* Отрицательные отступы для полной ширины */
+            font-size: 16px; /* Размер шрифта */
+            font-weight: bold; /* Жирный шрифт */
+            text-align: center;
+        }
+
+        /* Стили для заголовков разных уровней */
+        h1 {
+            color: #8B4513; /* Коричневый цвет */
+            font-family: 'Georgia', serif; /* Шрифт Georgia */
+            font-size: 2.3em; /* Размер шрифта */
+            text-align: center; /* Выравнивание по центру */
+            margin-bottom: 30px; /* Нижний отступ */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* Тень текста */
+        }
+
+        h2 {
+            color: #A0522D; /* Светло-коричневый цвет */
+            font-family: 'Arial', sans-serif; /* Шрифт Arial */
+            font-size: 1.8em; /* Размер шрифта */
+            border-bottom: 2px solid #8B4513; /* Нижняя граница */
+            padding-bottom: 5px; /* Отступ снизу */
+        }
+
+        h3 {
+            color: #CD853F; /* Песочно-коричневый цвет */
+            font-family: 'Verdana', sans-serif; /* Шрифт Verdana */
+			text-align: center; /* Выравнивание по центру */
+            font-size: 1.4em; /* Размер шрифта */
+        }
+
+        /* Стили для параграфов */
+        p {
+            text-align: center; /* Выравнивание по центру */
+            margin-bottom: 15px; /* Нижний отступ */
+            font-family: 'Times New Roman', serif; /* Шрифт Times New Roman */
+			font-size: 1.5em; /* Размер шрифта */
+        }
+
+        /* Стили для списков */
+        ul, ol {
+            margin: 15px 0; /* Верхний и нижний отступы */
+            padding-left: 30px; /* Левый отступ */
+        }
+
+        /* Стили для ссылок */
+        a {
+            color: #8B4513; /* Коричневый цвет ссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+            font-weight: bold; /* Жирный шрифт */
+            transition: color 0.3s; /* Плавный переход цвета */
+        }
+
+        /* Цвет ссылок при наведении */
+        a:hover {
+            color: #A0522D; /* Цвет при наведении */
+            text-decoration: underline; /* Подчеркивание при наведении */
+        }
+
+        /* Стили для навигационного меню */
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu h3 {
+            color: #8B4513;
+            font-family: 'Georgia', serif;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 10px;
+        }
+
+        .nav-menu li {
+            margin: 8px 0;
+        }
+
+        .nav-menu a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .nav-menu .dropdown {
+            position: relative;
+        }
+
+        .nav-menu .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(139,69,19,0.2);
+            z-index: 1000;
+            border: 1px solid #8B4513;
+            border-radius: 5px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 5px;
+        }
+
+        .nav-menu .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-menu .dropdown-content li {
+            margin: 0;
+        }
+
+        .nav-menu .dropdown-content a {
+            padding: 10px 15px;
+            font-size: 0.85em;
+            border-radius: 0;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+        }
+
+        .nav-menu .dropdown-content li:last-child a {
+            border-bottom: none;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(139, 69, 19, 0.1);
+            color: #654321;
+        }
+		
+		.back-to-top:hover {
+            background-color: #A0522D; /* Цвет фона при наведении */
+        }
+
+        @media (max-width: 768px) {
+            .frame-container {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .nav-frame {
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #8B4513;
+            }
+            
+            .main-frame {
+                padding: 15px;
+            }
+        }
+		
+				/* Стили для авторских прав */
+        .copyright {
+            position: fixed; /* Фиксированное позиционирование */
+            bottom: 15px; /* Отступ снизу */
+            right: 25px; /* Отступ справа */
+            color: black; /* Черный цвет текста */
+            font-size: 12px; /* Размер шрифта */
+            font-family: 'Arial', sans-serif; /* Шрифт Arial */
+        }
+			
+    </style>
+</head>
+
+<body>
+
+<!-- Контейнер для фреймовой структуры -->
+    <div class="frame-container">
+	
+        <!-- Левый навигационный фрейм -->
+        <div class="nav-frame">
+            <ul class="nav-menu">
+                <h3>Навигация по сайту</h3>
+				<li><a href="index.html">🏠 Главная страница</a></li>
+				<li><a href="page2.html">📚 Библиотечные ресурсы</a></li>
+				<li><a href="page3.html">📜 Структура. Формирование.<br>Распространение</a></li>
+            </ul>
+			
+			<img src="hand.jpg" alt="Картинка для левого фрейма" style="max-width: 100%; height: auto;">
+			
+        </div>
+
+<!-- Основной контентный фрейм -->
+        <div class="main-frame" id="main">
+            <!-- Бегущая строка в шапке сайта -->
+            <div class="marquee">
+                <marquee><i>&laquo;Библиотекари были страшнее ассасинов. Эти люди постоянно читали, и в их головах беспрестанно бродили мысли и рождались идеи. А идеи, как известно, &ndash; самое опасное оружие.&raquo Сара Дж. Маас</i></marquee>
+			</div>
+
+            <!-- Основной заголовок страницы -->
+            <h1>Российские государственные библиотечные информационные ресурсы</h1>
+
+            <!-- Информационные ресурсы -->
+            <h2>Информационные ресурсы</h2>
+                        
+    <!-- Ресурсы -->
+            
+                    <h3>Российская государственная библиотека</h3>
+                    <p><a href="https://www.rsl.ru/" target="_blank">https://www.rsl.ru/</a></p>
+              
+                    <h3>eLibrary</h3>
+                    <p><a href="https://elibrary.ru/" target="_blank">https://elibrary.ru/</a></p>
+                
+                    <h3>Общероссийский математический портал</h3>
+                    <p><a href="https://www.mathnet.ru/" target="_blank">https://www.mathnet.ru/</a></p>
+					
+			<!-- GIF в контейнере по центру -->
+			<div style="text-align: center">
+				<img src="Animation.gif" alt="Центрированная анимация" style="width: 400px; height: auto; display: block; margin: 0 auto;">
+			</div>
+        </div>
+    </div>
+
+<!-- Блок с авторскими правами -->
+    <div class="copyright">
+        &copy;&nbsp; Власова С.Д. 2025
+    </div>
+	
+</body>
+</html>
